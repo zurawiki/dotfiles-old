@@ -1,29 +1,37 @@
 #!/usr/bin/env bash
 
+# TODO consider make_dotfile function
+
 # Get current directory
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-# Copy root files
-ln -sv"${DIR}/.curlrc"  ~
-ln -sv"${DIR}/.editorconfig"  ~
-ln -sv"${DIR}/.gdbinit"  ~
-ln -sv"${DIR}/.wget"  ~
+echo "Copy root files"
+ln -sv "${DIR}/.curlrc"  ~
+ln -sv "${DIR}/.editorconfig"  ~
+ln -sv "${DIR}/.gdbinit"  ~
+ln -sv "${DIR}/.wget"  ~
 
-# Copy shell/ files
-ln -sv"${DIR}/shell/*"  ~
+echo "Copy shell/ files"
+ln -sv "${DIR}/shell/.aliases"  ~
+ln -sv "${DIR}/shell/.bash_profile"  ~
+ln -sv "${DIR}/shell/.bashrc"  ~
+ln -sv "${DIR}/shell/.exports"  ~
+ln -sv "${DIR}/shell/.functions"  ~
+ln -sv "${DIR}/shell/.inputrc"  ~
 
-# Copy git/ files
-ln -sv"${DIR}/git/*"  ~
+echo "Copy git/ files"
+ln -sv "${DIR}/git/.gitconfig"  ~
+ln -sv "${DIR}/git/.gitignore"  ~
 
-# Run all shell scripts
-"${DIR}/mac/update.sh"
-"${DIR}/mac/install.sh"
-"${DIR}/mac/set-ulimit.sh"
+echo "Run all shell scripts"
+"${DIR}/macos/update.sh"
+"${DIR}/macos/install.sh"
+"${DIR}/macos/set-ulimit.sh"
 
-# Install Homebrew
+echo "Install Homebrew"
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-cat "${DIR}/brew/Brewfile" | xargs brew install
+cat "${DIR}/homebrew/Brewfile" | xargs brew install
 
-# Setup vim
+echo "Setup vim"
 ln -sv "${DIR}/vim/.vimrc" ~
 "${DIR}/vim/install-vundle.sh"
