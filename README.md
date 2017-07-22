@@ -4,15 +4,6 @@
   - google drive to sync downloads, desktop
   - grep as ripgrep
 
-# vim
-  - syntax on
-  - indent 2 spaces
-  - paste raw
-  - typescript
-  - tsx
-  - line numbers
-  - scroll mouse
-
 # status bar prompt
   - git status
   - fast
@@ -45,7 +36,6 @@ require_cask font-roboto-mono-for-powerline
 require_cask font-source-code-pro
 ```
 
-# adb (facebook)
 
 # references:
 https://medium.com/@webprolific/getting-started-with-dotfiles-43c3602fd789
