@@ -3,11 +3,6 @@
 # TODO
   - google drive to sync downloads, desktop
   - grep as ripgrep
-  - ulimit hax
-
-
-### brew
-git bash vim wget ag
 
 # vim
   - syntax on
