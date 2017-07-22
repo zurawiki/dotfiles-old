@@ -36,7 +36,7 @@ require_cask font-roboto-mono
 require_cask font-roboto-mono-for-powerline
 require_cask font-source-code-pro
 ```
-
+# Make all install indempotent
 
 # references:
 https://medium.com/@webprolific/getting-started-with-dotfiles-43c3602fd789
