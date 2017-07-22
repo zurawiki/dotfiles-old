@@ -56,4 +56,5 @@ Temporary Items
 # IDEs stuff
 .idea
 
-private
+# vim swap files
+*.swp
