@@ -49,3 +49,11 @@ Temporary Items
 .apdisk
 
 # End of https://www.gitignore.io/api/osx,linux,dropbox
+
+# Compiled Python files
+*.pyc
+
+# IDEs stuff
+.idea
+
+private
