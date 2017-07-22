@@ -21,10 +21,11 @@
   - alt-word navigation
   - paste with new line dont run command
 
+# NPM global packages
+
 ## fonts
 ```sh
 brew tap caskroom/fonts
-
 require_cask font-fontawesome
 require_cask font-awesome-terminal-fonts
 require_cask font-hack
