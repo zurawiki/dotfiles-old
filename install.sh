@@ -21,9 +21,6 @@ ln -sv "${DIR}/shell/.functions"  ~
 ln -sv "${DIR}/shell/.inputrc"  ~
 ln -sv "${DIR}/shell/.path"  ~
 
-echo "Install liquidprompt"
-git clone --depth 1 https://github.com/nojhan/liquidprompt.git ~/liquidprompt
-
 echo "Copy git/ files"
 ln -sv "${DIR}/git/.gitconfig"  ~
 ln -sv "${DIR}/git/.gitignore"  ~
@@ -36,6 +33,15 @@ echo "Run all shell scripts"
 echo "Install Homebrew"
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 cat "${DIR}/homebrew/Brewfile" | xargs brew install
+
+echo "Install liquidprompt"
+git clone --depth 1 https://github.com/nojhan/liquidprompt.git ~/liquidprompt
+mkdir -p "~/.config"
+ln -sv "${DIR}/shell/liquidpromptrc" "~/.config"
+
+# Set bash shell as default
+echo "/usr/local/bin/bash" | sudo tee -a /etc/shells
+chsh -s /usr/local/bin/bash $USER
 
 echo "Install node packages"
 "${DIR}/node/install.sh"
