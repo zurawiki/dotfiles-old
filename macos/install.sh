@@ -174,12 +174,15 @@ defaults write com.apple.universalaccess HIDScrollZoomModifierMask -int 262144
 # Follow the keyboard focus while zoomed in
 defaults write com.apple.universalaccess closeViewZoomFollowsFocus -bool true
 
-# Enable press-and-hold for keys in stead of key repeat
-defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool true
+# Disable press-and-hold for keys in favor of key repeat
+defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
 
 # Set a blazingly fast keyboard repeat rate
-defaults write NSGlobalDomain KeyRepeat -int 1
-defaults write NSGlobalDomain InitialKeyRepeat -int 10
+defaults write NSGlobalDomain KeyRepeat -int 2 # normal minimum is 2 (30 ms)
+defaults write NSGlobalDomain InitialKeyRepeat -int 10  # normal minimum is 15 (225 ms)
+
+# Use F1, F2 keys as functions keys instead on the labels. (Hold with Fn)
+defaults write NSGlobalDomain com.apple.keyboard.fnState -bool true
 
 # Set language and text formats
 # Note: if you’re in the US, replace `EUR` with `USD`, `Centimeters` with
