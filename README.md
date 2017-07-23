@@ -5,12 +5,8 @@
   - grep as ripgrep
 
 # status bar prompt
-  - git status
   - fast
-  - abreviation on directories
-  - status of last command
-  - time
-  - todo https://github.com/nojhan/liquidprompt
+  - abreviation on directories, first letter
 
 # input
   - completions plug and play

@@ -14,11 +14,15 @@ ln -sv "${DIR}/.wget"  ~
 echo "Copy shell/ files"
 ln -sv "${DIR}/shell/.aliases"  ~
 ln -sv "${DIR}/shell/.bash_profile"  ~
+ln -sv "${DIR}/shell/.bash_prompt"  ~
 ln -sv "${DIR}/shell/.bashrc"  ~
 ln -sv "${DIR}/shell/.exports"  ~
 ln -sv "${DIR}/shell/.functions"  ~
 ln -sv "${DIR}/shell/.inputrc"  ~
 ln -sv "${DIR}/shell/.path"  ~
+
+echo "Install liquidprompt"
+git clone --depth 1 https://github.com/nojhan/liquidprompt.git ~/liquidprompt
 
 echo "Copy git/ files"
 ln -sv "${DIR}/git/.gitconfig"  ~
