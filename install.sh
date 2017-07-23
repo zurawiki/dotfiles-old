@@ -18,6 +18,7 @@ ln -sv "${DIR}/shell/.bashrc"  ~
 ln -sv "${DIR}/shell/.exports"  ~
 ln -sv "${DIR}/shell/.functions"  ~
 ln -sv "${DIR}/shell/.inputrc"  ~
+ln -sv "${DIR}/shell/.path"  ~
 
 echo "Copy git/ files"
 ln -sv "${DIR}/git/.gitconfig"  ~
@@ -31,6 +32,9 @@ echo "Run all shell scripts"
 echo "Install Homebrew"
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 cat "${DIR}/homebrew/Brewfile" | xargs brew install
+
+echo "Install node packages"
+"${DIR}/node/install.sh"
 
 echo "Setup vim"
 ln -sv "${DIR}/vim/.vimrc" ~

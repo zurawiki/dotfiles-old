@@ -15,13 +15,11 @@
 # input
   - completions plug and play
   - reverse search on up arrow
-  - colors on all the commands 
+  - colors on all the commands
   - rm (undo ability, / protection)
   - TODO updates all commands run in parallel
   - alt-word navigation
   - paste with new line dont run command
-
-# NPM global packages
 
 ## fonts
 ```sh
