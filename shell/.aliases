@@ -8,17 +8,18 @@ alias ..="cd .."
 alias -- -="cd -"
 alias .='pwd'
 
-# Git Shortcuts TODO sync with git configuation
+# Git Shortcuts TODO sync with git configuration
 alias g="git"
+alias gam="git commit -a --amend"
 alias ga="git add"
 alias gb="git branch"
 alias gc="git commit"
-alias gca="git commit -a"
-alias gcam="git commit -a -m '$@'"
-alias gcbo="git checkout -b"
+alias gca="git add . && git commit -a"
+alias gcam="git commit -a -m '${@}'"
+alias gcbo="git checkout --track origin/master -b"
 alias gco="git checkout"
-alias gd="git diff"
-alias gl="git pull --all"
+alias gd="git diff --minimal HEAD"
+alias gl="git pull --all --tags"
 alias glg="git log"
 alias gp="git push"
 alias gpf="git push --force"
@@ -26,7 +27,7 @@ alias gr="git rebase -i origin/master"
 alias grba="git rebase --abort"
 alias grbc="git rebase --continue"
 alias gs="git status"
-alias wip="git commit -m'WIP' . && git push origin HEAD"
+alias wip="git commit -m 'WIP' . && git push origin HEAD"
 
 # Add some protection to these DEADLY commands
 alias mv='mv -v'
@@ -72,7 +73,9 @@ alias map="xargs -n1"
 alias ls="exa"
 
 # List all files colorized in long format, including dot files
-alias ll="exa -la"
+alias ll="exa -l"
+alias lla="exa -la"
+alias l="exa"ZZ
 
 
 # Always enable colored `grep` output

@@ -54,7 +54,7 @@ Temporary Items
 *.pyc
 
 # IDEs stuff
-.idea
+.idea/
 
 # vim swap files
 *.swp
