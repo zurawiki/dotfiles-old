@@ -179,7 +179,7 @@ defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
 
 # Set a blazingly fast keyboard repeat rate
 defaults write NSGlobalDomain KeyRepeat -int 2 # normal minimum is 2 (30 ms)
-defaults write NSGlobalDomain InitialKeyRepeat -int 10  # normal minimum is 15 (225 ms)
+defaults write NSGlobalDomain InitialKeyRepeat -int 18  # normal minimum is 15 (225 ms)
 
 # Use F1, F2 keys as functions keys instead on the labels. (Hold with Fn)
 defaults write NSGlobalDomain com.apple.keyboard.fnState -bool true

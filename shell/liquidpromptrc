@@ -33,12 +33,12 @@ LP_ENABLE_SHORTEN_PATH=1
 # The maximum percentage of the screen width used to display the path before
 # removing the center portion of the path and replacing with '...'.
 # Recommended value is 35
-LP_PATH_LENGTH=30
+LP_PATH_LENGTH=20
 
 # The number of directories (including '/') to keep at the beginning of a
 # shortened path.
 # Recommended value is 2
-LP_PATH_KEEP=2
+LP_PATH_KEEP=1
 
 # Determine if the hostname should always be displayed, even if not connecting
 # through network.
@@ -66,7 +66,7 @@ LP_PERCENTS_ALWAYS=1
 # Use the permissions feature and display a red ':' before the prompt to show
 # when you don't have write permission to the current directory.
 # Recommended value is 1
-LP_ENABLE_PERM=0
+LP_ENABLE_PERM=1
 
 # Enable the proxy detection feature.
 # Recommended value is 1
@@ -116,7 +116,7 @@ LP_ENABLE_BZR=0
 # Show time of when the current prompt was displayed. (Must be enabled and
 # disabled in the config file and not after liquidprompt has already been
 # sourced.)
-LP_ENABLE_TIME=1
+LP_ENABLE_TIME=0
 
 # Show runtime of the previous command if over LP_RUNTIME_THRESHOLD
 # Recommended value is 0
