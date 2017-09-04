@@ -20,6 +20,10 @@ ln -sv "${DIR}/shell/.exports"  ~
 ln -sv "${DIR}/shell/.functions"  ~
 ln -sv "${DIR}/shell/.inputrc"  ~
 ln -sv "${DIR}/shell/.path"  ~
+ln -sv "${DIR}/shell/.zsh_profile"  ~
+ln -sv "${DIR}/shell/.zsh_prompt"  ~
+ln -sv "${DIR}/shell/.zsh_setopts"  ~
+ln -sv "${DIR}/shell/.zshrc"  ~
 
 echo "Copy git/ files"
 ln -sv "${DIR}/git/.gitconfig"  ~

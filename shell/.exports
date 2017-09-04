@@ -1,6 +1,15 @@
 # Preferred editor for local and remote sessions
 export EDITOR=vim
 export VISUAL=vim
+export PAGER=less
+
+# Setup terminal, and turn on colors
+export TERM=xterm-256color
+export CLICOLOR=1
+
+# This resolves issues install the mysql, postgres, and other gems with native non universal binary extensions
+export ARCHFLAGS='-arch x86_64'
+
 
 # Enable persistent REPL history for `node`.
 export NODE_REPL_HISTORY=~/.node_history;

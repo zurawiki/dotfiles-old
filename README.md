@@ -3,7 +3,10 @@
 # TODO
   - google drive to sync downloads, desktop
   - grep as ripgrep
-
+  - Use make for install scripts
+  - scroll in less and 
+  - iterm integration
+ 
 # status bar prompt
   - fast
   - abreviation on directories, first letter

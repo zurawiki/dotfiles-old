@@ -73,10 +73,10 @@ alias map="xargs -n1"
 alias ls="exa"
 
 # List all files colorized in long format, including dot files
+alias l="exa"
+alias la="exa -a"
 alias ll="exa -l"
 alias lla="exa -la"
-alias l="exa"ZZ
-
 
 # Always enable colored `grep` output
 # Note: `GREP_OPTIONS="--color=auto"` is deprecated, hence the alias usage.

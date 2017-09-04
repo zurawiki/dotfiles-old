@@ -7,3 +7,5 @@ mackup
 python3
 vim
 yarn
+zsh
+zsh-completions

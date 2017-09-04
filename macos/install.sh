@@ -607,7 +607,7 @@ defaults write com.apple.terminal StringEncodings -array 4
 
 # Enable “focus follows mouse” for Terminal.app and all X11 apps
 # i.e. hover over a window and start typing in it without clicking first
-#defaults write com.apple.terminal FocusFollowsMouse -bool true
+defaults write com.apple.terminal FocusFollowsMouse -bool true
 #defaults write org.x.X11 wm_ffm -bool true
 
 # Enable Secure Keyboard Entry in Terminal.app
@@ -619,6 +619,9 @@ defaults write com.apple.Terminal ShowLineMarks -int 0
 
 # Install the Solarized Dark theme for iTerm
 # open "${HOME}/init/Solarized Dark.itermcolors"
+
+# Let iTerm pass mouse scroll to less
+defaults write com.googlecode.iterm2 AlternateMouseScroll -bool true 
 
 # Don’t display the annoying prompt when quitting iTerm
 defaults write com.googlecode.iterm2 PromptOnQuit -bool false
