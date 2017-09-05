@@ -15,6 +15,18 @@ unset file;
 ###################################################
 autoload colors; colors
 
+# The variables are wrapped in \%\{\%\}. This should be the case for every
+# variable that does not contain space.
+for COLOR in RED GREEN YELLOW BLUE MAGENTA CYAN BLACK WHITE; do
+  eval PR_$COLOR='%{$fg_no_bold[${(L)COLOR}]%}'
+  eval PR_BOLD_$COLOR='%{$fg_bold[${(L)COLOR}]%}'
+done
+
+eval RESET='$reset_color'
+export PR_RED PR_GREEN PR_YELLOW PR_BLUE PR_WHITE PR_BLACK
+export PR_BOLD_RED PR_BOLD_GREEN PR_BOLD_YELLOW PR_BOLD_BLUE
+export PR_BOLD_WHITE PR_BOLD_BLACK
+
 # HISTORY
 HISTSIZE=10000
 SAVEHIST=9000
@@ -126,12 +138,17 @@ bindkey "^K"      kill-whole-line                      # ctrl-k
 bindkey "^R"      history-incremental-search-backward  # ctrl-r
 bindkey "^A"      beginning-of-line                    # ctrl-a
 bindkey "^E"      end-of-line                          # ctrl-e
-bindkey "[B"      history-search-forward               # down arrow
-bindkey "[A"      history-search-backward              # up arrow
 bindkey "^D"      delete-char                          # ctrl-d
 bindkey "^F"      forward-char                         # ctrl-f
 bindkey "^B"      backward-char                        # ctrl-b
 bindkey -v   # Default to standard vi bindings, regardless of editor string
+
+autoload -U up-line-or-beginning-search
+autoload -U down-line-or-beginning-search
+zle -N up-line-or-beginning-search
+zle -N down-line-or-beginning-search
+bindkey "^[[A" up-line-or-beginning-search # Up
+bindkey "^[[B" down-line-or-beginning-search # Down
 
 #################################################
 # Krypton
