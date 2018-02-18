@@ -127,11 +127,20 @@ function postexec {
   set_running_app
 }
 
+# Use emacs mode (Default for zsh)
 bindkey -e
 
 # Set Alt+Left/Right to move by word
 bindkey "\e[1;3C" forward-word
 bindkey "\e[1;3D" backward-word
+
+# Delete key works
+bindkey "^[[3~" delete-char
+bindkey "^[3;5~" delete-char
+
+# Alt+Backspace/Delete worksbindkey 
+bindkey '^[^?' backward-kill-word 
+bindkey "^[[1~" delete-word
 
 autoload -U up-line-or-beginning-search
 autoload -U down-line-or-beginning-search
