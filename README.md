@@ -9,7 +9,7 @@
  
 # status bar prompt
   - fast
-  - abreviation on directories, first letter
+  - abbreviation on directories, first letter
 
 # input
   - completions plug and play
