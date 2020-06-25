@@ -126,11 +126,11 @@
 	# Include summaries of merged commits in newly created merge commit messages
 	log = true
 
-[pager]
+[core]
+  pager = delta --dark 
 
-  # Insanely beautiful diffs ==> npm install -g diff-so-fancy
-  diff = diff-so-fancy | less --tabs=4 -RFX
-  show = diff-so-fancy | less --tabs=4 -RFX
+[interactive]
+  diffFilter = delta --color-only
 
 [pull]
   # Rebase instead of merging by default
@@ -173,3 +173,13 @@
 [url "git://gist.github.com/"]
 
   insteadOf = "gist:"
+[diff "image"]
+	textconv = imgcat
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+
+[gpg]
+	program = gpg
