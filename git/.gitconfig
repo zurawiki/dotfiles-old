@@ -39,7 +39,7 @@
 
 [core]
   # use vim
-  editor = vim
+	editor = nvim
 
 	# Use custom `.gitignore` and `.gitattributes`
 	excludesfile = ~/.gitignore
