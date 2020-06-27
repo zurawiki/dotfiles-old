@@ -34,6 +34,8 @@ ln -svf "${DIR}/shell/.zsh_profile"  ~
 ln -svf "${DIR}/shell/.zsh_prompt"  ~
 ln -svf "${DIR}/shell/.zsh_setopts"  ~
 ln -svf "${DIR}/shell/.zshrc"  ~
+mkdir -p  ~/.config/fish/
+ln -svf "${DIR}/shell/config.fish"  ~/.config/fish
 
 echo "› sudo softwareupdate -i -a"
 sudo softwareupdate -i -a
