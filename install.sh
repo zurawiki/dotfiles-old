@@ -1,55 +1,56 @@
 #!/usr/bin/env bash
+set -euo pipefail
 
 # TODO consider make_dotfile function
 
 # Get current directory
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-echo "Copy root files"
-ln -sv "${DIR}/.curlrc"  ~
-ln -sv "${DIR}/.editorconfig"  ~
-ln -sv "${DIR}/.gdbinit"  ~
-ln -sv "${DIR}/.wget"  ~
+# Close any open System Preferences panes, to prevent them from overriding
+# settings we’re about to change
+echo "closing any system preferences to prevent issues with automated changes"
+osascript -e 'tell application "System Preferences" to quit'
 
-echo "Copy shell/ files"
-ln -sv "${DIR}/shell/.aliases"  ~
-ln -sv "${DIR}/shell/.bash_profile"  ~
-ln -sv "${DIR}/shell/.bash_prompt"  ~
-ln -sv "${DIR}/shell/.bashrc"  ~
-ln -sv "${DIR}/shell/.exports"  ~
-ln -sv "${DIR}/shell/.functions"  ~
-ln -sv "${DIR}/shell/.inputrc"  ~
-ln -sv "${DIR}/shell/.path"  ~
-ln -sv "${DIR}/shell/.zsh_profile"  ~
-ln -sv "${DIR}/shell/.zsh_prompt"  ~
-ln -sv "${DIR}/shell/.zsh_setopts"  ~
-ln -sv "${DIR}/shell/.zshrc"  ~
+# Ask for the administrator password upfront
+sudo -v
+
+echo "Copy root files"
+ln -svf "${DIR}/.curlrc"  ~
+ln -svf "${DIR}/.editorconfig"  ~
+ln -svf "${DIR}/.gdbinit"  ~
+ln -svf "${DIR}/.wget"  ~
 
 echo "Copy git/ files"
-ln -sv "${DIR}/git/.gitconfig"  ~
-ln -sv "${DIR}/git/.gitignore"  ~
+ln -svf "${DIR}/git/.gitconfig"  ~
+ln -svf "${DIR}/git/.gitignore"  ~
+
+echo "Copy shell/ files"
+ln -svf "${DIR}/shell/.aliases"  ~
+ln -svf "${DIR}/shell/.exports"  ~
+ln -svf "${DIR}/shell/.functions"  ~
+ln -svf "${DIR}/shell/.inputrc"  ~
+ln -svf "${DIR}/shell/.path"  ~
+ln -svf "${DIR}/shell/.zsh_profile"  ~
+ln -svf "${DIR}/shell/.zsh_prompt"  ~
+ln -svf "${DIR}/shell/.zsh_setopts"  ~
+ln -svf "${DIR}/shell/.zshrc"  ~
+
+echo "› sudo softwareupdate -i -a"
+sudo softwareupdate -i -a
 
 echo "Run all shell scripts"
-"${DIR}/macos/update.sh"
 "${DIR}/macos/install.sh"
-"${DIR}/macos/set-ulimit.sh"
 
 echo "Install Homebrew"
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-cat "${DIR}/homebrew/Brewfile" | xargs brew install
-
-echo "Install liquidprompt"
-git clone --depth 1 https://github.com/nojhan/liquidprompt.git ~/liquidprompt
-mkdir -p "~/.config"
-ln -sv "${DIR}/shell/liquidpromptrc" "~/.config"
-
-# Set bash shell as default
-echo "/usr/local/bin/bash" | sudo tee -a /etc/shells
-chsh -s /usr/local/bin/bash $USER
-
-echo "Install node packages"
-"${DIR}/node/install.sh"
+"${DIR}/homebrew/install.sh"
 
 echo "Setup vim"
-ln -sv "${DIR}/vim/.vimrc" ~
-"${DIR}/vim/install-vundle.sh"
+ln -svf "${DIR}/vim/.vimrc" ~
+
+# Set default shell
+echo "/usr/local/bin/fish" | sudo tee -a /etc/shells
+chsh -s /usr/local/bin/fish $USER
+
+
+echo "- Restarting SystemUIServer"
+killall SystemUIServer

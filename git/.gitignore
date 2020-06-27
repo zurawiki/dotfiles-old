@@ -1,4 +1,6 @@
-# Created by https://www.gitignore.io/api/osx,linux,dropbox
+
+# Created by https://www.toptal.com/developers/gitignore/api/osx,linux,dropbox
+# Edit at https://www.toptal.com/developers/gitignore?templates=osx,linux,dropbox
 
 ### Dropbox ###
 # Dropbox settings and caches
@@ -22,7 +24,8 @@
 .nfs*
 
 ### OSX ###
-*.DS_Store
+# General
+.DS_Store
 .AppleDouble
 .LSOverride
 
@@ -48,8 +51,7 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
-# End of https://www.gitignore.io/api/osx,linux,dropbox
-
+# End of https://www.toptal.com/developers/gitignore/api/osx,linux,dropbox
 # Compiled Python files
 *.pyc
 

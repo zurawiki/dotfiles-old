@@ -8,6 +8,7 @@ To tap into additional repos of formulae :
 
     brew tap homebrew/science
     brew tap homebrew/dupes
+    brew tap homebrew/cask-fonts
 
 To create the packages list do :
 

@@ -38,7 +38,7 @@
 	whitespace = fix
 
 [core]
-  # use vim
+	# use vim
 	editor = nvim
 
 	# Use custom `.gitignore` and `.gitattributes`
@@ -62,10 +62,10 @@
 
 	# Use colors in Git commands that are capable of colored output when
 	# outputting to the terminal. (This is the default setting in Git ≥ 1.8.4.)
-  diff = auto
-  status = auto
-  branch = auto
-  ui = always
+	diff = auto
+	status = auto
+	branch = auto
+	ui = always
 
 [color "branch"]
 
@@ -80,13 +80,6 @@
 	old = red # deletions
 	new = green # additions
 
-
-[color "diff-highlight"]
-
-  oldNormal = red bold
-  oldHighlight = "red bold 52"
-  newNormal = "green bold"
-  newHighlight = "green bold 22"
 
 [color "status"]
 
